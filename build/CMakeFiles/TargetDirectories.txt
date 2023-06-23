@@ -1,0 +1,3 @@
+/home/michn/Software/simulator/build/CMakeFiles/hello_world.dir
+/home/michn/Software/simulator/build/CMakeFiles/edit_cache.dir
+/home/michn/Software/simulator/build/CMakeFiles/rebuild_cache.dir
