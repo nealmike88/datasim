@@ -1,2 +1,2 @@
-# Empty dependencies file for hello_world.
+# Empty dependencies file for Library.
 # This may be replaced when dependencies are built.

@@ -1,5 +1,5 @@
-CMakeFiles/hello_world.dir/main.cpp.o: \
- /home/michn/Software/simulator/main.cpp /usr/include/stdc-predef.h \
+src/CMakeFiles/Library.dir/datasim.cpp.o: \
+ /home/michn/Software/datasim/src/datasim.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/c++/13/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -145,4 +145,5 @@ CMakeFiles/hello_world.dir/main.cpp.o: \
  /usr/include/c++/13/tr1/modified_bessel_func.tcc \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
- /usr/include/c++/13/tr1/riemann_zeta.tcc
+ /usr/include/c++/13/tr1/riemann_zeta.tcc \
+ /home/michn/Software/datasim/src/datasim.h

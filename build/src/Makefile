@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/michn/Software/datasim/build/CMakeFiles /home/michn/Software/datasim/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/michn/Software/datasim/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/michn/Software/datasim/build/CMakeFiles /home/michn/Software/datasim/build/src//CMakeFiles/progress.marks
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/michn/Software/datasim/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,44 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/michn/Software/datasim/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Library
+# Convenience name for target.
+src/CMakeFiles/Library.dir/rule:
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/Library.dir/rule
+.PHONY : src/CMakeFiles/Library.dir/rule
 
-# Build rule for target.
-Library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Library
+# Convenience name for target.
+Library: src/CMakeFiles/Library.dir/rule
 .PHONY : Library
 
 # fast build rule for target.
 Library/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/Library.dir/build.make src/CMakeFiles/Library.dir/build
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/Library.dir/build.make src/CMakeFiles/Library.dir/build
 .PHONY : Library/fast
 
-#=============================================================================
-# Target rules for targets named Executable
+datasim.o: datasim.cpp.o
+.PHONY : datasim.o
 
-# Build rule for target.
-Executable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Executable
-.PHONY : Executable
+# target to build an object file
+datasim.cpp.o:
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/Library.dir/build.make src/CMakeFiles/Library.dir/datasim.cpp.o
+.PHONY : datasim.cpp.o
 
-# fast build rule for target.
-Executable/fast:
-	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/Executable.dir/build.make app/CMakeFiles/Executable.dir/build
-.PHONY : Executable/fast
+datasim.i: datasim.cpp.i
+.PHONY : datasim.i
+
+# target to preprocess a source file
+datasim.cpp.i:
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/Library.dir/build.make src/CMakeFiles/Library.dir/datasim.cpp.i
+.PHONY : datasim.cpp.i
+
+datasim.s: datasim.cpp.s
+.PHONY : datasim.s
+
+# target to generate assembly for a file
+datasim.cpp.s:
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/Library.dir/build.make src/CMakeFiles/Library.dir/datasim.cpp.s
+.PHONY : datasim.cpp.s
 
 # Help Target
 help:
@@ -150,8 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Executable"
 	@echo "... Library"
+	@echo "... datasim.o"
+	@echo "... datasim.i"
+	@echo "... datasim.s"
 .PHONY : help
 
 
@@ -163,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/michn/Software/datasim/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/michn/Software/simulator
+CMAKE_SOURCE_DIR = /home/michn/Software/datasim
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/michn/Software/simulator
+CMAKE_BINARY_DIR = /home/michn/Software/datasim/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/michn/Software/simulator/CMakeFiles /home/michn/Software/simulator//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/michn/Software/simulator/CMakeFiles 0
+	cd /home/michn/Software/datasim/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/michn/Software/datasim/build/CMakeFiles /home/michn/Software/datasim/build/app//CMakeFiles/progress.marks
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michn/Software/datasim/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,38 +103,39 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/michn/Software/datasim/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Main
+# Convenience name for target.
+app/CMakeFiles/Executable.dir/rule:
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/Executable.dir/rule
+.PHONY : app/CMakeFiles/Executable.dir/rule
 
-# Build rule for target.
-Main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Main
-.PHONY : Main
+# Convenience name for target.
+Executable: app/CMakeFiles/Executable.dir/rule
+.PHONY : Executable
 
 # fast build rule for target.
-Main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/build
-.PHONY : Main/fast
+Executable/fast:
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/Executable.dir/build.make app/CMakeFiles/Executable.dir/build
+.PHONY : Executable/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/main.cpp.o
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/Executable.dir/build.make app/CMakeFiles/Executable.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -142,7 +143,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/main.cpp.i
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/Executable.dir/build.make app/CMakeFiles/Executable.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -150,7 +151,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/main.cpp.s
+	cd /home/michn/Software/datasim/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/Executable.dir/build.make app/CMakeFiles/Executable.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -161,7 +162,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Main"
+	@echo "... Executable"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -176,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/michn/Software/datasim/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
