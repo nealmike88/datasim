@@ -1,124 +1,9 @@
-# Eclipse Paho MQTT C++ Client Library
+# Install 
 
-[![Build Status](https://travis-ci.org/eclipse/paho.mqtt.cpp.svg?branch=master)](https://travis-ci.org/eclipse/paho.mqtt.cpp)
-
-This repository contains the source code for the [Eclipse Paho](http://eclipse.org/paho) MQTT C++ client library on memory-managed operating systems such as Linux/Posix and Windows.
-
-This code builds a library which enables C++11 applications to connect to an [MQTT](http://mqtt.org) broker, publish messages to the broker, and to subscribe to topics and receive published messages.
-
-The library has the following features:
-
-- Support for MQTT v3.1, v3.1.1, and v5.
-- Network Transports:
-    - Standard TCP
-    - Secure sockets with SSL/TLS
-    - WebSockets 
-        - Secure and insecure
-        - Proxy support
-- Message persistence
-    - User configurable 
-    - Built-in File persistence
-    - User-defined key/value persistence easy to implement
-- Automatic Reconnect
-- Offline Buffering
-- High Availability
-- Blocking and non-blocking API's
-- Modern C++ interface (C++11 and better)
-
-This code requires the [Paho C library](https://github.com/eclipse/paho.mqtt.c) by Ian Craggs, et al., specifically version 1.3.8 or possibly later.
-
-## Latest News
-
-To keep up with the latest announcements for this project, or to ask questions:
-
-**Twitter:** [@eclipsepaho](https://twitter.com/eclipsepaho) and [@fmpagliughi](https://twitter.com/fmpagliughi)
-
-**EMail:** [Eclipse Paho Mailing List](https://accounts.eclipse.org/mailing-list/paho-dev)
-
-**Mattermost:** [Eclipse Mattermost Paho Channel](https://mattermost.eclipse.org/eclipse/channels/paho)
+## Building MQTT from source
 
 
-### Unreleased features in this branch
-
-- Added Session Expiry Interval to v5 chat sample
-- Minor tweaks to prepare for C++20
-- Minor cleanup of the tests
-[#317](https://github.com/eclipse/paho.mqtt.cpp/issues/317) String constructor using just len instead of end iterator.
-[#337](https://github.com/eclipse/paho.mqtt.cpp/issues/337) Copy and move constructors/assignment of `ssl_options` not handling CA path.
-
-
-### What's new in Version 1.2.0
-
-This release brings in some missing MQTT v5 features, support for websocket headers and proxies, ALPN protocol lists, adds the builder pattern for options, and fixes a number of bugs in both the C++ library and the underlying C lib.
-
-Requires Paho C v1.3.8
-
-- Missing MQTT v5 features:
-    - Ability to add properties to Subscribe and Unsubscribe packets (i.e. subscription identifiers)
-    - "Disconnected" callback gives reason code and properties for server disconnect
-- New `create_options` that can be used to construct a client with new features:
-    - Send while disconnected before the 1st successful connection
-    - Output buffer can delete oldest messages when full
-    - Can choose to clear the persistence store on startup
-    - Select whether to persist QoS 0 messages
-- Started classes to create options using the Builder Pattern, with the `create_options_builder`, `connect_options_builder`, `message_ptr_builder`, etc.
-- User-defined websocket HTTP headers.
-- HTTP/S proxy support
-- Added ALPN protocol support to SSL/TLS options
-- SSL/TLS error and PSK callback support
-- Update connection callback support (change credentials when using auto-reconnect)
-- Updates to the sample apps:
-    - Overall cleanup with better consistency
-    - Example of using websockets and a proxy
-    - User-based file persistence with simple encoding/encryption
-    - Sharing a client between multiple threads
-- Converted the unit tests to use Catch2
-- All library exceptions are now properly derived from the `mqtt::exception` base class.
-- [#231] Added `on_disconnected` callback to handle receipt of disconnect packet from server.
-- [#211, #223, #235] Removed use of Log() function from the Paho C library.
-- [#227] Fixed race condition in thread-safe queue
-- [#224] & [#255] Subscribing to MQTT v3 broker with array of one topic causes segfault.
-- [#282] Ability to build Debian/Ubuntu package
-- [#300] Calling `reconnect()` was hanging forever, even when successful. In addition several of the synchronous `client` calls were hanging forever on failure. They now properly throw a `timeout_error` exception.
-- Several memory issues and bug fixes from updated Paho C library support.
-
-### _Catch2_ Unit Tests
-
-Unit tests were converted to use _Catch2_ for the test framework. 
-
-_Catch2_ can be found here: [Catch2](https://github.com/catchorg/Catch2)
-
-## Contributing
-
-Contributions to this project are gladly welcomed and appreciated Before submitting a Pull Request, please keep three things in mind:
-
- - This is an official Eclipse project, so it is required that all contributors sign an [Eclipse Contributor Agreement (ECA)](https://www.eclipse.org/legal/ECA.php)
- - Please submit all Pull Requests against the _develop_ branch (not master).
- - Please sign all commits.
- 
- For full details, see [CONTRIBUTING.md](https://github.com/eclipse/paho.mqtt.cpp/blob/master/CONTRIBUTING.md).
- 
-## Building from source
-
-_CMake_  is a cross-platform build system suitable for Unix and non-Unix platforms such as Microsoft Windows. It is now the only supported build system.
-
-The Paho C++ library requires the Paho C library, v1.3.8 or greater, to be built and installed first. More information below.
-
-CMake allows for options to direct the build. The following are specific to Paho C++:
-
-Variable | Default Value | Description
------------- | ------------- | -------------
-PAHO_BUILD_SHARED | TRUE (Linux), FALSE (Win32) | Whether to build the shared library
-PAHO_BUILD_STATIC | FALSE (Linux), TRUE (Win32) | Whether to build the static library
-PAHO_BUILD_DOCUMENTATION | FALSE | Create and install the HTML based API documentation (requires Doxygen)
-PAHO_BUILD_SAMPLES | FALSE | Build sample programs
-PAHO_BUILD_TESTS | FALSE | Build the unit tests. (This requires _Catch2_)
-PAHO_WITH_SSL | TRUE (Linux), FALSE (Win32) | Flag that defines whether to build ssl-enabled binaries too
-PAHO_BUILD_DEB_PACKAGE | FALSE | Flag that configures cpack to build a Debian/Ubuntu package
-
-In addition, the C++ build might commonly use `CMAKE_PREFIX_PATH` to help the build system find the location of the Paho C library.
-
-### Unix and Linux
+### Unix and Linux Debian
 
 On *nix systems CMake creates Makefiles.
 
@@ -149,6 +34,15 @@ $ sudo apt-get install doxygen graphviz
 Unit tests are being built using _Catch2_. 
 
 _Catch2_ can be found here: [Catch2](https://github.com/catchorg/Catch2).  You must download and install _Catch2_ to build and run the unit tests locally.
+
+
+### Fedora
+dnf group list --hidden
+dnf group info "C Development Tools and Libraries"
+sudo dnf group install "C Development Tools and Libraries" "Development Tools"
+sudo yum install libssl-dev 
+sudo yum install openssl-devel
+sudo yum install doxygen graphviz
 
 #### Building the Paho C library
 
@@ -272,98 +166,8 @@ Then use it to build the C++ library:
 
 *Note that it is very important that you use the same generator (target) to build BOTH libraries, otherwise you will get lots of linker errors when you try to build the C++ library.*
 
-## Supported Network Protocols
-
-The library supports connecting to an MQTT server/broker using TCP, SSL/TLS, and websockets (secure and unsecure). This is chosen by the URI supplied to the connect() call. It can be specified as:
-
 ```
-"tcp://<host>:<port>"  - TCP (unsecure)
-"ssl://<host>:<port>"  - SSL/TLS
-"ws://<host>:<port>"   - Unsecure websockets
-"wss://<host>:<port>"  - Secure websockets
+cmake -Bbuild -H. -DPAHO_BUILD_STATIC=ON     -DPAHO_BUILD_DOCUMENTATION=TRUE -DPAHO_BUILD_APP=TRUE
+sudo cmake --build build/ --target install
+./build/src/app/main 
 ```
-
-Note that to use "ssl://" or "wss://" you must compile the library with OpenSSL, and you _must_ supply a set of `ssl_options` with the `connect_options`.
-
-## Example
-
-Sample applications can be found in the source repository at _src/samples_:
-https://github.com/eclipse/paho.mqtt.cpp/tree/master/src/samples
-
-This is a partial example of what a typical example might look like:
-
-```cpp
-int main(int argc, char* argv[])
-{
-    sample_mem_persistence persist;
-    mqtt::client cli(ADDRESS, CLIENT_ID, &persist);
-
-    callback cb;
-    cli.set_callback(cb);
-
-    auto connOpts = mqtt::connect_options_builder() 
-        .keep_alive_interval(20);
-        .clean_session()
-        .finalize();
-
-    try {
-        cli.connect(connOpts);
-
-        // First use a message pointer.
-
-        mqtt::message_ptr pubmsg = mqtt::make_message(PAYLOAD1);
-        pubmsg->set_qos(QOS);
-        cli.publish(TOPIC, pubmsg);
-
-        // Now try with itemized publish.
-
-        cli.publish(TOPIC, PAYLOAD2, strlen(PAYLOAD2)+1, 0, false);
-
-        // Disconnect
-        
-        cli.disconnect();
-    }
-    catch (const mqtt::persistence_exception& exc) {
-        cerr << "Persistence Error: " << exc.what() << " ["
-            << exc.get_reason_code() << "]" << endl;
-        return 1;
-    }
-    catch (const mqtt::exception& exc) {
-        cerr << "Error: " << exc.what() << " ["
-            << exc.get_reason_code() << "]" << endl;
-        return 1;
-    }
-
-    return 0;
-}
-```
-
------------
-
-The original API organization and documentation were adapted from:
-
-The Paho Java library
-by Dave Locke et al.
-Copyright (c) 2012, IBM Corp
-
- All rights reserved. This program and the accompanying materials
- are made available under the terms of the Eclipse Public License v1.0
- which accompanies this distribution, and is available at
- http://www.eclipse.org/legal/epl-v10.html
-
------------
-
-This code requires:
-
-The Paho C library by Ian Craggs
-Copyright (c) 2013-2018, IBM Corp.
-
- All rights reserved. This program and the accompanying materials
- are made available under the terms of the Eclipse Public License v1.0
- and Eclipse Distribution License v1.0 which accompany this distribution.
-
- The Eclipse Public License is available at
-    http://www.eclipse.org/legal/epl-v10.html
- and the Eclipse Distribution License is available at
-   http://www.eclipse.org/org/documents/edl-v10.php.
-
