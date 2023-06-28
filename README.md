@@ -166,6 +166,9 @@ Then use it to build the C++ library:
 
 *Note that it is very important that you use the same generator (target) to build BOTH libraries, otherwise you will get lots of linker errors when you try to build the C++ library.*
 
+
+# Running Project Build
+
 ```
 cmake -Bbuild -H. -DPAHO_BUILD_STATIC=ON     -DPAHO_BUILD_DOCUMENTATION=TRUE -DPAHO_BUILD_APP=TRUE
 sudo cmake --build build/ --target install
