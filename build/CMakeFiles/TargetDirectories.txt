@@ -33,16 +33,6 @@
 /home/michn/Software/datasim/build/src/mqtt/CMakeFiles/install.dir
 /home/michn/Software/datasim/build/src/mqtt/CMakeFiles/install/local.dir
 /home/michn/Software/datasim/build/src/mqtt/CMakeFiles/install/strip.dir
-/home/michn/Software/datasim/build/doc/CMakeFiles/Doxyfile.cmake.target.dir
-/home/michn/Software/datasim/build/doc/CMakeFiles/doc.dir
-/home/michn/Software/datasim/build/doc/CMakeFiles/package.dir
-/home/michn/Software/datasim/build/doc/CMakeFiles/package_source.dir
-/home/michn/Software/datasim/build/doc/CMakeFiles/edit_cache.dir
-/home/michn/Software/datasim/build/doc/CMakeFiles/rebuild_cache.dir
-/home/michn/Software/datasim/build/doc/CMakeFiles/list_install_components.dir
-/home/michn/Software/datasim/build/doc/CMakeFiles/install.dir
-/home/michn/Software/datasim/build/doc/CMakeFiles/install/local.dir
-/home/michn/Software/datasim/build/doc/CMakeFiles/install/strip.dir
 /home/michn/Software/datasim/build/src/app/CMakeFiles/main.dir
 /home/michn/Software/datasim/build/src/app/CMakeFiles/package.dir
 /home/michn/Software/datasim/build/src/app/CMakeFiles/package_source.dir

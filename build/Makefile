@@ -221,32 +221,6 @@ paho-mqttpp3-static/fast:
 .PHONY : paho-mqttpp3-static/fast
 
 #=============================================================================
-# Target rules for targets named Doxyfile.cmake.target
-
-# Build rule for target.
-Doxyfile.cmake.target: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Doxyfile.cmake.target
-.PHONY : Doxyfile.cmake.target
-
-# fast build rule for target.
-Doxyfile.cmake.target/fast:
-	$(MAKE) $(MAKESILENT) -f doc/CMakeFiles/Doxyfile.cmake.target.dir/build.make doc/CMakeFiles/Doxyfile.cmake.target.dir/build
-.PHONY : Doxyfile.cmake.target/fast
-
-#=============================================================================
-# Target rules for targets named doc
-
-# Build rule for target.
-doc: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 doc
-.PHONY : doc
-
-# fast build rule for target.
-doc/fast:
-	$(MAKE) $(MAKESILENT) -f doc/CMakeFiles/doc.dir/build.make doc/CMakeFiles/doc.dir/build
-.PHONY : doc/fast
-
-#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -273,8 +247,6 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... Doxyfile.cmake.target"
-	@echo "... doc"
 	@echo "... main"
 	@echo "... paho-cpp-objs"
 	@echo "... paho-mqttpp3"
