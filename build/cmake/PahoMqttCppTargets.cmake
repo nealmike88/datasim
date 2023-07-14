@@ -62,18 +62,18 @@ set_target_properties(PahoMqttCpp::paho-mqttpp3-static PROPERTIES
   INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:c>;\$<LINK_ONLY:stdc++>;PahoMqttC::PahoMqttC;Threads::Threads"
 )
 
-# Import target "PahoMqttCpp::paho-mqttpp3" for configuration "Release"
-set_property(TARGET PahoMqttCpp::paho-mqttpp3 APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+# Import target "PahoMqttCpp::paho-mqttpp3" for configuration ""
+set_property(TARGET PahoMqttCpp::paho-mqttpp3 APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(PahoMqttCpp::paho-mqttpp3 PROPERTIES
-  IMPORTED_LOCATION_RELEASE "/home/michn/Software/datasim/build/src/libpaho-mqttpp3.so.1.2.0"
-  IMPORTED_SONAME_RELEASE "libpaho-mqttpp3.so.1"
+  IMPORTED_LOCATION_NOCONFIG "/home/michn/Software/datasim/build/src/libpaho-mqttpp3.so.1.2.0"
+  IMPORTED_SONAME_NOCONFIG "libpaho-mqttpp3.so.1"
   )
 
-# Import target "PahoMqttCpp::paho-mqttpp3-static" for configuration "Release"
-set_property(TARGET PahoMqttCpp::paho-mqttpp3-static APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+# Import target "PahoMqttCpp::paho-mqttpp3-static" for configuration ""
+set_property(TARGET PahoMqttCpp::paho-mqttpp3-static APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(PahoMqttCpp::paho-mqttpp3-static PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "CXX"
-  IMPORTED_LOCATION_RELEASE "/home/michn/Software/datasim/build/src/libpaho-mqttpp3.a"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "CXX"
+  IMPORTED_LOCATION_NOCONFIG "/home/michn/Software/datasim/build/src/libpaho-mqttpp3.a"
   )
 
 # This file does not depend on other imported targets which have

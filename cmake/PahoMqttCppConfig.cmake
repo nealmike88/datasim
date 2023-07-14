@@ -1,5 +1,5 @@
 # save build-time options
-set(PAHO_BUILD_STATIC ON)
+set(PAHO_BUILD_STATIC OFF)
 set(PAHO_BUILD_SHARED ON)
 set(PAHO_WITH_SSL ON)
 

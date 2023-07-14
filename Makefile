@@ -207,32 +207,6 @@ paho-mqttpp3/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/paho-mqttpp3.dir/build.make src/CMakeFiles/paho-mqttpp3.dir/build
 .PHONY : paho-mqttpp3/fast
 
-#=============================================================================
-# Target rules for targets named paho-mqttpp3-static
-
-# Build rule for target.
-paho-mqttpp3-static: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 paho-mqttpp3-static
-.PHONY : paho-mqttpp3-static
-
-# fast build rule for target.
-paho-mqttpp3-static/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/paho-mqttpp3-static.dir/build.make src/CMakeFiles/paho-mqttpp3-static.dir/build
-.PHONY : paho-mqttpp3-static/fast
-
-#=============================================================================
-# Target rules for targets named main
-
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f src/app/CMakeFiles/main.dir/build.make src/app/CMakeFiles/main.dir/build
-.PHONY : main/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -247,10 +221,8 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... main"
 	@echo "... paho-cpp-objs"
 	@echo "... paho-mqttpp3"
-	@echo "... paho-mqttpp3-static"
 .PHONY : help
 
 

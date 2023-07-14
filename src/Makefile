@@ -209,20 +209,6 @@ paho-mqttpp3/fast:
 	cd /home/michn/Software/datasim && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/paho-mqttpp3.dir/build.make src/CMakeFiles/paho-mqttpp3.dir/build
 .PHONY : paho-mqttpp3/fast
 
-# Convenience name for target.
-src/CMakeFiles/paho-mqttpp3-static.dir/rule:
-	cd /home/michn/Software/datasim && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/paho-mqttpp3-static.dir/rule
-.PHONY : src/CMakeFiles/paho-mqttpp3-static.dir/rule
-
-# Convenience name for target.
-paho-mqttpp3-static: src/CMakeFiles/paho-mqttpp3-static.dir/rule
-.PHONY : paho-mqttpp3-static
-
-# fast build rule for target.
-paho-mqttpp3-static/fast:
-	cd /home/michn/Software/datasim && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/paho-mqttpp3-static.dir/build.make src/CMakeFiles/paho-mqttpp3-static.dir/build
-.PHONY : paho-mqttpp3-static/fast
-
 async_client.o: async_client.cpp.o
 .PHONY : async_client.o
 
@@ -623,7 +609,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... paho-cpp-objs"
 	@echo "... paho-mqttpp3"
-	@echo "... paho-mqttpp3-static"
 	@echo "... async_client.o"
 	@echo "... async_client.i"
 	@echo "... async_client.s"
