@@ -16,6 +16,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "src/CMakeLists.txt"
   "src/datasim/CMakeLists.txt"
   "src/mqtt/CMakeLists.txt"
+  "src/sensors/CMakeLists.txt"
   "/usr/share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
@@ -62,6 +63,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/datasim/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/mqtt/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/sensors/CMakeFiles/CMakeDirectoryInformation.cmake"
   "cmake/PahoMqttCppConfig.cmake"
   "cmake/PahoMqttCppConfigVersion.cmake"
   "cmake/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -71,4 +73,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/paho-cpp-objs.dir/DependInfo.cmake"
   "src/CMakeFiles/paho-mqttpp3.dir/DependInfo.cmake"
+  "src/sensors/CMakeFiles/main.dir/DependInfo.cmake"
   )

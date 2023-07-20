@@ -22,7 +22,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -276,9 +276,6 @@ OPENSSL_INCLUDE_DIR:PATH=/usr/include
 //Path to a library.
 OPENSSL_SSL_LIBRARY:FILEPATH=/usr/lib64/libssl.so
 
-//No help, variable specified on the command line.
-PAHO_BUILD_APP:UNINITIALIZED=TRUE
-
 //Build debian package
 PAHO_BUILD_DEB_PACKAGE:BOOL=OFF
 
@@ -292,7 +289,7 @@ PAHO_BUILD_SAMPLES:BOOL=OFF
 PAHO_BUILD_SHARED:BOOL=ON
 
 //Build static library
-PAHO_BUILD_STATIC:BOOL=ON
+PAHO_BUILD_STATIC:BOOL=OFF
 
 //Build tests
 PAHO_BUILD_TESTS:BOOL=OFF
@@ -312,6 +309,9 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//No help, variable specified on the command line.
+SENSOR_APP:UNINITIALIZED=TRUE
+
 //Value Computed by CMake
 paho-mqtt-cpp_BINARY_DIR:STATIC=/home/michn/Software/datasim/build
 
@@ -320,9 +320,6 @@ paho-mqtt-cpp_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 paho-mqtt-cpp_SOURCE_DIR:STATIC=/home/michn/Software/datasim
-
-//Dependencies for the target
-paho-mqttpp3-static_LIB_DEPENDS:STATIC=general;c;general;stdc++;general;PahoMqttC::PahoMqttC;
 
 //Dependencies for the target
 paho-mqttpp3_LIB_DEPENDS:STATIC=general;c;general;stdc++;general;PahoMqttC::PahoMqttC;

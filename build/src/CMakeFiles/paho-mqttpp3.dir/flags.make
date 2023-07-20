@@ -6,5 +6,5 @@ CXX_DEFINES = -DOPENSSL=1 -Dpaho_mqttpp3_EXPORTS
 
 CXX_INCLUDES = -I/home/michn/Software/datasim/src
 
-CXX_FLAGS = -std=c++11 -fPIC
+CXX_FLAGS = -O3 -DNDEBUG -std=c++11 -fPIC
 

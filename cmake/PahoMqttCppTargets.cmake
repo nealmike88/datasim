@@ -54,11 +54,11 @@ set_target_properties(PahoMqttCpp::paho-mqttpp3 PROPERTIES
   INTERFACE_LINK_LIBRARIES "PahoMqttC::PahoMqttC;Threads::Threads"
 )
 
-# Import target "PahoMqttCpp::paho-mqttpp3" for configuration ""
-set_property(TARGET PahoMqttCpp::paho-mqttpp3 APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
+# Import target "PahoMqttCpp::paho-mqttpp3" for configuration "Release"
+set_property(TARGET PahoMqttCpp::paho-mqttpp3 APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(PahoMqttCpp::paho-mqttpp3 PROPERTIES
-  IMPORTED_LOCATION_NOCONFIG "/home/michn/Software/datasim/src/libpaho-mqttpp3.so.1.2.0"
-  IMPORTED_SONAME_NOCONFIG "libpaho-mqttpp3.so.1"
+  IMPORTED_LOCATION_RELEASE "/home/michn/Software/datasim/src/libpaho-mqttpp3.so.1.2.0"
+  IMPORTED_SONAME_RELEASE "libpaho-mqttpp3.so.1"
   )
 
 # This file does not depend on other imported targets which have

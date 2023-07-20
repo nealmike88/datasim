@@ -99,8 +99,16 @@ endif()
 
 # --- Main Apps ---
 
-if(PAHO_BUILD_APP)
+if(BASIC_APP)
     add_subdirectory(src/app)
+endif()
+
+if(THRUSTER_APP)
+    add_subdirectory(src/thrusters)
+endif()
+
+if(SENSOR_APP)
+add_subdirectory(src/sensors)
 endif()
 
 # --- Unit Tests ---
@@ -124,5 +132,3 @@ endif()
 
 include(CPack)
 add_subdirectory(cmake)
-
-

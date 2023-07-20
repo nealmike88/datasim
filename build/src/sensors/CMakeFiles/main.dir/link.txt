@@ -1,0 +1,1 @@
+/usr/lib64/ccache/c++ -O3 -DNDEBUG CMakeFiles/main.dir/main.cpp.o -o main  -Wl,-rpath,/home/michn/Software/datasim/build/src:/usr/local/lib64: ../libpaho-mqttpp3.so.1.2.0 /usr/local/lib64/libpaho-mqtt3as.so /usr/lib64/libssl.so /usr/lib64/libcrypto.so 

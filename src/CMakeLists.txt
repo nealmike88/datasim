@@ -144,5 +144,3 @@ if(PAHO_BUILD_STATIC)
         set_target_properties(paho-mqttpp3-static PROPERTIES OUTPUT_NAME paho-mqttpp3)
     endif()
 endif()
-
-

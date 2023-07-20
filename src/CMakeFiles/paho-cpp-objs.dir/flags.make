@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/michn/Software/datasim/src -I/home/michn/Software/datasim/src/src
 
-CXX_FLAGS = -std=c++11 -fPIC
+CXX_FLAGS = -O3 -DNDEBUG -std=c++11 -fPIC
 

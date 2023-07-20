@@ -32,6 +32,15 @@
 /home/michn/Software/datasim/src/mqtt/CMakeFiles/install.dir
 /home/michn/Software/datasim/src/mqtt/CMakeFiles/install/local.dir
 /home/michn/Software/datasim/src/mqtt/CMakeFiles/install/strip.dir
+/home/michn/Software/datasim/src/sensors/CMakeFiles/main.dir
+/home/michn/Software/datasim/src/sensors/CMakeFiles/package.dir
+/home/michn/Software/datasim/src/sensors/CMakeFiles/package_source.dir
+/home/michn/Software/datasim/src/sensors/CMakeFiles/edit_cache.dir
+/home/michn/Software/datasim/src/sensors/CMakeFiles/rebuild_cache.dir
+/home/michn/Software/datasim/src/sensors/CMakeFiles/list_install_components.dir
+/home/michn/Software/datasim/src/sensors/CMakeFiles/install.dir
+/home/michn/Software/datasim/src/sensors/CMakeFiles/install/local.dir
+/home/michn/Software/datasim/src/sensors/CMakeFiles/install/strip.dir
 /home/michn/Software/datasim/cmake/CMakeFiles/package.dir
 /home/michn/Software/datasim/cmake/CMakeFiles/package_source.dir
 /home/michn/Software/datasim/cmake/CMakeFiles/edit_cache.dir

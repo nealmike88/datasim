@@ -19,7 +19,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_cmake_targets_defined "")
 set(_cmake_targets_not_defined "")
 set(_cmake_expected_targets "")
-foreach(_cmake_expected_target IN ITEMS PahoMqttCpp::paho-mqttpp3 PahoMqttCpp::paho-mqttpp3-static)
+foreach(_cmake_expected_target IN ITEMS PahoMqttCpp::paho-mqttpp3)
   list(APPEND _cmake_expected_targets "${_cmake_expected_target}")
   if(TARGET "${_cmake_expected_target}")
     list(APPEND _cmake_targets_defined "${_cmake_expected_target}")
@@ -54,26 +54,11 @@ set_target_properties(PahoMqttCpp::paho-mqttpp3 PROPERTIES
   INTERFACE_LINK_LIBRARIES "PahoMqttC::PahoMqttC;Threads::Threads"
 )
 
-# Create imported target PahoMqttCpp::paho-mqttpp3-static
-add_library(PahoMqttCpp::paho-mqttpp3-static STATIC IMPORTED)
-
-set_target_properties(PahoMqttCpp::paho-mqttpp3-static PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/michn/Software/datasim/src"
-  INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:c>;\$<LINK_ONLY:stdc++>;PahoMqttC::PahoMqttC;Threads::Threads"
-)
-
-# Import target "PahoMqttCpp::paho-mqttpp3" for configuration ""
-set_property(TARGET PahoMqttCpp::paho-mqttpp3 APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
+# Import target "PahoMqttCpp::paho-mqttpp3" for configuration "Release"
+set_property(TARGET PahoMqttCpp::paho-mqttpp3 APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(PahoMqttCpp::paho-mqttpp3 PROPERTIES
-  IMPORTED_LOCATION_NOCONFIG "/home/michn/Software/datasim/build/src/libpaho-mqttpp3.so.1.2.0"
-  IMPORTED_SONAME_NOCONFIG "libpaho-mqttpp3.so.1"
-  )
-
-# Import target "PahoMqttCpp::paho-mqttpp3-static" for configuration ""
-set_property(TARGET PahoMqttCpp::paho-mqttpp3-static APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
-set_target_properties(PahoMqttCpp::paho-mqttpp3-static PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "CXX"
-  IMPORTED_LOCATION_NOCONFIG "/home/michn/Software/datasim/build/src/libpaho-mqttpp3.a"
+  IMPORTED_LOCATION_RELEASE "/home/michn/Software/datasim/build/src/libpaho-mqttpp3.so.1.2.0"
+  IMPORTED_SONAME_RELEASE "libpaho-mqttpp3.so.1"
   )
 
 # This file does not depend on other imported targets which have

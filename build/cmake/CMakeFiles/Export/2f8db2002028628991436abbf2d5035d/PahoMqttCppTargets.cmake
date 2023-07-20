@@ -19,7 +19,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_cmake_targets_defined "")
 set(_cmake_targets_not_defined "")
 set(_cmake_expected_targets "")
-foreach(_cmake_expected_target IN ITEMS PahoMqttCpp::paho-mqttpp3 PahoMqttCpp::paho-mqttpp3-static)
+foreach(_cmake_expected_target IN ITEMS PahoMqttCpp::paho-mqttpp3)
   list(APPEND _cmake_expected_targets "${_cmake_expected_target}")
   if(TARGET "${_cmake_expected_target}")
     list(APPEND _cmake_targets_defined "${_cmake_expected_target}")
@@ -61,14 +61,6 @@ add_library(PahoMqttCpp::paho-mqttpp3 SHARED IMPORTED)
 set_target_properties(PahoMqttCpp::paho-mqttpp3 PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_LINK_LIBRARIES "PahoMqttC::PahoMqttC;Threads::Threads"
-)
-
-# Create imported target PahoMqttCpp::paho-mqttpp3-static
-add_library(PahoMqttCpp::paho-mqttpp3-static STATIC IMPORTED)
-
-set_target_properties(PahoMqttCpp::paho-mqttpp3-static PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:c>;\$<LINK_ONLY:stdc++>;PahoMqttC::PahoMqttC;Threads::Threads"
 )
 
 if(CMAKE_VERSION VERSION_LESS 2.8.12)

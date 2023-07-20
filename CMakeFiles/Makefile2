@@ -64,16 +64,19 @@ CMAKE_BINARY_DIR = /home/michn/Software/datasim
 
 # The main recursive "all" target.
 all: src/all
+all: src/sensors/all
 all: cmake/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: src/preinstall
+preinstall: src/sensors/preinstall
 preinstall: cmake/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: src/clean
+clean: src/sensors/clean
 clean: cmake/clean
 .PHONY : clean
 
@@ -145,13 +148,28 @@ src/mqtt/clean:
 .PHONY : src/mqtt/clean
 
 #=============================================================================
+# Directory level rules for directory src/sensors
+
+# Recursive "all" directory target.
+src/sensors/all: src/sensors/CMakeFiles/main.dir/all
+.PHONY : src/sensors/all
+
+# Recursive "preinstall" directory target.
+src/sensors/preinstall:
+.PHONY : src/sensors/preinstall
+
+# Recursive "clean" directory target.
+src/sensors/clean: src/sensors/CMakeFiles/main.dir/clean
+.PHONY : src/sensors/clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/paho-cpp-objs.dir
 
 # All Build rule for target.
 src/CMakeFiles/paho-cpp-objs.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/paho-cpp-objs.dir/build.make src/CMakeFiles/paho-cpp-objs.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/paho-cpp-objs.dir/build.make src/CMakeFiles/paho-cpp-objs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/michn/Software/datasim/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target paho-cpp-objs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/michn/Software/datasim/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target paho-cpp-objs"
 .PHONY : src/CMakeFiles/paho-cpp-objs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -177,7 +195,7 @@ src/CMakeFiles/paho-cpp-objs.dir/clean:
 src/CMakeFiles/paho-mqttpp3.dir/all: src/CMakeFiles/paho-cpp-objs.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/paho-mqttpp3.dir/build.make src/CMakeFiles/paho-mqttpp3.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/paho-mqttpp3.dir/build.make src/CMakeFiles/paho-mqttpp3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/michn/Software/datasim/CMakeFiles --progress-num=17 "Built target paho-mqttpp3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/michn/Software/datasim/CMakeFiles --progress-num=19 "Built target paho-mqttpp3"
 .PHONY : src/CMakeFiles/paho-mqttpp3.dir/all
 
 # Build rule for subdir invocation for target.
@@ -195,6 +213,32 @@ paho-mqttpp3: src/CMakeFiles/paho-mqttpp3.dir/rule
 src/CMakeFiles/paho-mqttpp3.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/paho-mqttpp3.dir/build.make src/CMakeFiles/paho-mqttpp3.dir/clean
 .PHONY : src/CMakeFiles/paho-mqttpp3.dir/clean
+
+#=============================================================================
+# Target rules for target src/sensors/CMakeFiles/main.dir
+
+# All Build rule for target.
+src/sensors/CMakeFiles/main.dir/all: src/CMakeFiles/paho-mqttpp3.dir/all
+	$(MAKE) $(MAKESILENT) -f src/sensors/CMakeFiles/main.dir/build.make src/sensors/CMakeFiles/main.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/sensors/CMakeFiles/main.dir/build.make src/sensors/CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/michn/Software/datasim/CMakeFiles --progress-num=1,2 "Built target main"
+.PHONY : src/sensors/CMakeFiles/main.dir/all
+
+# Build rule for subdir invocation for target.
+src/sensors/CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michn/Software/datasim/CMakeFiles 19
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/sensors/CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michn/Software/datasim/CMakeFiles 0
+.PHONY : src/sensors/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: src/sensors/CMakeFiles/main.dir/rule
+.PHONY : main
+
+# clean rule for target.
+src/sensors/CMakeFiles/main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/sensors/CMakeFiles/main.dir/build.make src/sensors/CMakeFiles/main.dir/clean
+.PHONY : src/sensors/CMakeFiles/main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
