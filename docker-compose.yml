@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  mosquitto:
+    container_name: mosquitto-mqtt
+    image: eclipse-mosquitto:latest
+    volumes:
+      - ./config:/mosquitto/config/
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+    ports:
+      - '1883:1883'
+      - '8883:8883'
+    networks:
+      - homesrv
+    restart: always
+
+  datasim1:
+    container_name: sensor1
+    image: sensor1
+    networks:
+      - homesrv
+    restart: always    
+
+  datasim2:
+    container_name: sensor2
+    image: sensor2
+    networks:
+      - homesrv
+    restart: always
+
+  datasim3: 
+    container_name: sensor3
+    image: sensor3
+    networks:
+      - homesrv
+    restart: always
+
+networks:
+  homesrv:
+
+volumes:
+  mosquitto_data:
+  mosquitto_log:
