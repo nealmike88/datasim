@@ -21,20 +21,6 @@ services:
       - homesrv
     restart: always    
 
-  datasim2:
-    container_name: sensor2
-    image: sensor2
-    networks:
-      - homesrv
-    restart: always
-
-  datasim3: 
-    container_name: sensor3
-    image: sensor3
-    networks:
-      - homesrv
-    restart: always
-
 networks:
   homesrv:
 
