@@ -50,7 +50,7 @@ const auto TIMEOUT = std::chrono::seconds(10);
 
 float y; 
 int t = 0; 
-int tcount = 10;
+int tcount = 100;
 
 vector<string> build_topics(int tstart, int tcount)
 {
