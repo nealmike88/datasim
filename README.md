@@ -58,7 +58,7 @@ docker build -t sensor5 -f dockerfile_sensor5 .
 Go to docker-compose directory and fire it up 
 
 ```
-cd /opt/docker-compose
+cd /opt/datasim/docker-compose
 docker compose up
 ```
 
