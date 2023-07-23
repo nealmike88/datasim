@@ -3,10 +3,36 @@ I put the project in the /opt directory since I thought you were going to use th
 All the instructions use that assumption but if you put it somewhere else just replace /opt with where you are working out of 
 
 ## Install Demo
+### Set up Docker Compose
+```
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+```
+
+```
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+```
+
+```
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+```
+sudo systemctl start docker
+sudo docker run hello-world
+```
+
 ### Get the project 
 ```
 cd /opt
-git clone https://github.com/nealmike88/datasim.git
+git clone -b demo https://github.com/nealmike88/datasim.git
 ```
    
 I can't seem to integrate the paho.mqtt.c instance into my github repo properly so you have to grab it separately. 
@@ -15,15 +41,7 @@ Make sure you put it in the datasim directory and then build the library
 ```
 cd /opt/datasim
 git clone https://github.com/eclipse/paho.mqtt.c.git
-
-cd paho.mqtt.c
-git checkout v1.3.8
-
-cmake -Bbuild -H. -DPAHO_ENABLE_TESTING=OFF -DPAHO_BUILD_STATIC=ON \
-    -DPAHO_WITH_SSL=ON -DPAHO_HIGH_PERFORMANCE=ON
-sudo cmake --build build/ --target install
-sudo ldconfig
-``` 
+```
 
 Build the docker images
 
@@ -37,28 +55,46 @@ docker build -t sensor5 -f dockerfile_sensor5 .
 ```
 
 ## Running the Demo
-Go to docker-compose directory
+Go to docker-compose directory and fire it up 
 
 ```
 cd /opt/docker-compose
-```
-
-Fire up the docker compose instance.   
-
-```
 docker compose up
 ```
 
 ## Making Changes 
-If you need to edit the programs, do the following:
+If you need to edit the programs to change the IP, do the following:
 
 - Go to /opt/datasim/src/sensors/main.cpp
 - Edit the IP to reflect the new machine IP
-- Compile with the below command from the datasim dir
+- Compile the Paho MQTT C Library (if you are going to run locally on your machine)
+- Compile with the below command from the datasim dir (to run on your machine)
+
+Compile the Paho MQTT C Library
 
 ```
+cd /opt/datasim/paho.mqtt.c
+git checkout v1.3.8
+
+cmake -Bbuild -H. -DPAHO_ENABLE_TESTING=OFF -DPAHO_BUILD_STATIC=ON \
+    -DPAHO_WITH_SSL=ON -DPAHO_HIGH_PERFORMANCE=ON
+sudo cmake --build build/ --target install
+sudo ldconfig
+``` 
+
+Compile Datasim Program
+
+```
+cd /opt/datasim
 cmake -Bbuild -H. -DSENSOR_APP=TRUE
 sudo cmake --build build/ --target-install
+```
+
+Run Datasim Program
+You can replace the argv argument with whatever starting topic number you want. It will start from that number and add 100 topics
+
+```
+/opt/datasim/build/src/sensors/main 1
 ```
 
 # Main Install 
