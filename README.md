@@ -97,6 +97,13 @@ You can replace the argv argument with whatever starting topic number you want. 
 /opt/datasim/build/src/sensors/main 1
 ```
 
+## Applying Changes 
+If you needed to make changes and want to kick them back to docker, just delete the images and make new ones. 
+
+```
+docker image rm -f <image name> 
+docker build -t <image name> -f <dockerfile name> .
+```
 # Main Install 
 ### Unix and Linux Debian
 
