@@ -1,8 +1,47 @@
-# Install 
+# Demo Instructions
+I put the project in the /opt directory since I thought you were going to use this laptop
+All the instructions use that assumption but if you put it somewhere else just replace /opt with where you are working out of 
 
-## Building MQTT from source
+## Install Demo
+### Get the project 
+```
+cd /opt
+git clone https://github.com/nealmike88/datasim.git
+```
+   
+I can't seem to integrate the paho.mqtt.c instance into my github repo properly so you have to grab it separately. Make sure you put it in the datasim directory 
 
 
+```
+cd /opt/datasim
+git clone https://github.com/eclipse/paho.mqtt.c.git
+``` 
+## Running the Demo
+Go to docker-compose directory
+
+```
+cd /opt/docker-compose
+```
+
+Fire up the docker compose instance.   
+
+```
+docker compose up
+```
+
+## Making Changes 
+If you need to edit the programs, do the following:
+
+- Go to /opt/datasim/src/sensors/main.cpp
+- Edit the IP to reflect the new machine IP
+- Compile with the below command from the datasim dir
+
+```
+cmake -Bbuild -H. -DSENSOR_APP=TRUE
+sudo cmake --build build/ --target-install
+```
+
+# Main Install 
 ### Unix and Linux Debian
 
 On *nix systems CMake creates Makefiles.
