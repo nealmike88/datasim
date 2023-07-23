@@ -1,5 +1,5 @@
 # Demo Instructions
-I put the project in the /opt directory since I thought you were going to use this laptop
+I put the project in the /opt directory since I thought you were going to use this laptop.
 All the instructions use that assumption but if you put it somewhere else just replace /opt with where you are working out of 
 
 ## Install Demo
@@ -9,13 +9,33 @@ cd /opt
 git clone https://github.com/nealmike88/datasim.git
 ```
    
-I can't seem to integrate the paho.mqtt.c instance into my github repo properly so you have to grab it separately. Make sure you put it in the datasim directory 
-
+I can't seem to integrate the paho.mqtt.c instance into my github repo properly so you have to grab it separately. 
+Make sure you put it in the datasim directory and then build the library 
 
 ```
 cd /opt/datasim
 git clone https://github.com/eclipse/paho.mqtt.c.git
+
+cd paho.mqtt.c
+git checkout v1.3.8
+
+cmake -Bbuild -H. -DPAHO_ENABLE_TESTING=OFF -DPAHO_BUILD_STATIC=ON \
+    -DPAHO_WITH_SSL=ON -DPAHO_HIGH_PERFORMANCE=ON
+sudo cmake --build build/ --target install
+sudo ldconfig
 ``` 
+
+Build the docker images
+
+```
+docker build -t sensor1 -f dockerfile_sensor1 .
+docker build -t sensor1 -f dockerfile_sensor1 .
+docker build -t sensor2 -f dockerfile_sensor2 .
+docker build -t sensor3 -f dockerfile_sensor3 .
+docker build -t sensor4 -f dockerfile_sensor4 .
+docker build -t sensor5 -f dockerfile_sensor5 .
+```
+
 ## Running the Demo
 Go to docker-compose directory
 
