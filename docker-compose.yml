@@ -18,11 +18,38 @@ services:
     container_name: sensor1
     image: sensor1
     networks:
-      - homesrv
+      - demonet
     restart: always    
 
+  datasim2:
+    container_name: sensor2
+    image: sensor2
+    networks:
+      - demonet
+    restart: always    
+
+  datasim3:
+    container_name: sensor3
+    image: sensor3
+    networks:
+      - demonet
+    restart: always    
+
+  datasim4:
+    container_name: sensor4
+    image: sensor4
+    networks:
+      - demonet
+    restart: always    
+
+  datasim5:
+    container_name: sensor5
+    image: sensor5
+    networks:
+      - demonet
+    restart: always    
 networks:
-  homesrv:
+  demonet:
 
 volumes:
   mosquitto_data:
