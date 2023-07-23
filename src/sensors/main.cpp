@@ -41,7 +41,7 @@
 
 using namespace std;
 
-const string DFLT_SERVER_ADDRESS { "tcp://192.168.20.17:1883" };
+const string DFLT_SERVER_ADDRESS { "tcp://192.168.20.187:1883" };
 
 const string TOPIC { "test" };
 const int QOS = 1;

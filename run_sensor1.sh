@@ -1,1 +1,1 @@
-./build/src/sensors/main 20
+./build/src/sensors/main 1
